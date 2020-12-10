@@ -1,5 +1,5 @@
 package hbcu.stay.ready.baronsfarm.interfaces;
 
-public abstract class Produce {
+public interface Produce {
 
 }
