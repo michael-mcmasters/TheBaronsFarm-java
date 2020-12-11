@@ -8,7 +8,7 @@ public class Tractor implements FarmVehicle {
 
     }
 
-    public void makeNoise() {
-
+    public String makeNoise() {
+        return null;
     }
 }

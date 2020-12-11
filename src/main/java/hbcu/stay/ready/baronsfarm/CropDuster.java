@@ -17,7 +17,7 @@ public class CropDuster implements FarmVehicle, Aircraft {
 
     }
 
-    public void makeNoise() {
-
+    public String makeNoise() {
+        return null;
     }
 }

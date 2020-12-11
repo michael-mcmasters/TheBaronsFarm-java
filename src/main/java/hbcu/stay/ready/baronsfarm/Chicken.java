@@ -6,8 +6,8 @@ import hbcu.stay.ready.baronsfarm.interfaces.Produce;
 
 public class Chicken extends Animal implements Produce {
 
-    public void makeNoise() {
-
+    public String makeNoise() {
+        return "bwuak";
     }
 
     public void harvest() {
