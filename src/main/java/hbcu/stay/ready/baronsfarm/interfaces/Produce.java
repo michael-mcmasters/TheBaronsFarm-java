@@ -1,14 +1,14 @@
 package hbcu.stay.ready.baronsfarm.interfaces;
 
-public interface Produce {
+public abstract class Produce {
 
     public boolean hasBeenHarvested = false;
     public boolean hasBeenFertilized = false;
 
-    public void harvest();
-    public void fertilize();
-    public Edible yield();
+    public abstract void harvest();
+    public abstract void fertilize();
+    public abstract Edible yield();
 
-    public Boolean getHasBeenHarvested();
-    public Boolean hasBeenFertilized();
+    public abstract Boolean getHasBeenHarvested();
+    public abstract Boolean hasBeenFertilized();
 }

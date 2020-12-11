@@ -4,17 +4,22 @@ import hbcu.stay.ready.baronsfarm.interfaces.Animal;
 import hbcu.stay.ready.baronsfarm.interfaces.Edible;
 import hbcu.stay.ready.baronsfarm.interfaces.Produce;
 
-public class Chicken extends Animal implements Produce {
+public class Chicken extends Produce implements Animal {
 
     public String makeNoise() {
         return "bwuak";
     }
 
     public void harvest() {
-
+        hasBeenHarvested = true;
     }
 
     public void fertilize() {
+
+    }
+
+    @Override
+    public void eat(Edible edible) {
 
     }
 
@@ -29,4 +34,5 @@ public class Chicken extends Animal implements Produce {
     public Boolean hasBeenFertilized() {
         return null;
     }
+
 }
