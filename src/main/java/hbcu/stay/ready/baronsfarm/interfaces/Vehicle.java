@@ -1,7 +1,7 @@
 package hbcu.stay.ready.baronsfarm.interfaces;
 
-public interface Vehicle extends Rideable {
+import java.util.ArrayList;
 
-//    public ArrayList<Crop> cropsList;
-//    public boolean hasBeenFertilized;
+public interface Vehicle {
+
 }
