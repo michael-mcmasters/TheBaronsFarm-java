@@ -7,4 +7,8 @@ public class Tractor implements FarmVehicle {
     public void operate(Farm farm) {
 
     }
+
+    public void makeNoise() {
+
+    }
 }

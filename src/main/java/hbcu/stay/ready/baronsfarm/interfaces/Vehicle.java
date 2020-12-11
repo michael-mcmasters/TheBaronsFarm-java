@@ -2,6 +2,6 @@ package hbcu.stay.ready.baronsfarm.interfaces;
 
 import java.util.ArrayList;
 
-public interface Vehicle {
+public interface Vehicle extends Rideable, NoiseMaker {
 
 }
