@@ -20,7 +20,7 @@ public class CornStalk extends Crop {
         return null;
     }
 
-    public Boolean hasBeenFertilized() {
+    public Boolean getHasBeenFertilized() {
         return null;
     }
 }

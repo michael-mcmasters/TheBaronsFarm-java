@@ -1,5 +1,6 @@
 package hbcu.stay.ready.baronsfarm;
 
+import hbcu.stay.ready.baronsfarm.interfaces.Edible;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,11 +22,21 @@ public class ChickenTest {
 
     @Test
     public void harvestTest() {
-        // ToDo
+        chicken.harvest();
+        Assert.assertTrue(chicken.getHasBeenHarvested());
     }
 
     @Test
     public void fertilizeTest() {
-        // ToDo
+        chicken.fertilize();
+        Assert.assertTrue(chicken.getHasBeenFertilized());
+    }
+
+    @Test
+    public void yield() {
+        chicken.harvest();
+        chicken.fertilize();
+        Edible edible = chicken.yield();
+        Assert.assertNotNull(edible);
     }
 }
