@@ -24,21 +24,35 @@ public class Farm {
         this.farmHouse = farmHouse;
     }
 
-    public ArrayList<Stable> getStableList() {
+    public void addStables(Stable... stables) {
+        Collections.addAll(stableList, stables);
+    }
+
+    public void addChickenCoops(ChickenCoop... chickenCoops) {
+        Collections.addAll(chickenCoopList, chickenCoops);
+    }
+
+    public void addFields(Field... fields) {
+        Collections.addAll(fieldList, fields);
+    }
+
+    public void setFarmHouse(FarmHouse farmHouse) {
+        this.farmHouse = farmHouse;
+    }
+
+    public ArrayList<Stable> getStables() {
         return stableList;
     }
 
-    public ArrayList<ChickenCoop> getChickenCoopList() {
+    public ArrayList<ChickenCoop> getChickenCoops() {
         return chickenCoopList;
     }
 
-    public ArrayList<Field> getFieldList() { return fieldList; }
+    public ArrayList<Field> getFields() {
+        return fieldList;
+    }
 
     public FarmHouse getFarmHouse() {
         return farmHouse;
-    }
-
-    public void addToFieldList(Field... fields) {
-        Collections.addAll(fieldList, fields);
     }
 }

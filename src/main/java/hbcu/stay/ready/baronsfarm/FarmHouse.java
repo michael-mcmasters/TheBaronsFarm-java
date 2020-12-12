@@ -8,6 +8,10 @@ public class FarmHouse {
 
     private ArrayList<Person> personList;
 
+    public FarmHouse() {
+        personList = new ArrayList<Person>();
+    }
+
     public FarmHouse(Person person) {
         this.personList = new ArrayList<>();
         personList.add(person);

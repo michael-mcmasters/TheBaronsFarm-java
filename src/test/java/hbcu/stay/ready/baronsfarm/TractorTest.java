@@ -20,7 +20,7 @@ public class TractorTest {
         CropRow cropRow = new CropRow(cornStalk);
         Field field = new Field(cropRow);
         Farm farm = new Farm();
-        farm.addToFieldList(field);
+        farm.addFields(field);
 
         tractor.operate(farm);
         Assert.assertTrue(cornStalk.getHasBeenHarvested());

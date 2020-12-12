@@ -10,7 +10,7 @@ public class CropDuster implements FarmVehicle, Aircraft {
 
     // Operate on entire farm. All fields.
     public void operate(Farm farm) {
-        ArrayList<Field> fields = farm.getFieldList();
+        ArrayList<Field> fields = farm.getFields();
         for (Field field : fields) {
             fertilize(field);
         }

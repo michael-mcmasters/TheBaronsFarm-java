@@ -9,7 +9,7 @@ public class Tractor implements FarmVehicle {
 
     // Operate over entire farm.
     public void operate(Farm farm) {
-        ArrayList<Field> fields = farm.getFieldList();
+        ArrayList<Field> fields = farm.getFields();
         for (Field field : fields) {
             harvest(field);
         }

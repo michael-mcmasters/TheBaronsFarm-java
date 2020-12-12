@@ -27,9 +27,46 @@ public class FarmTest {
         fields.add(new Field());
 
         Farm farm = new Farm(stables, chickenCoops, fields, farmHouse);
-        Assert.assertTrue("Number of stables", farm.getStableList().size() == 1);
-        Assert.assertTrue("Number of chicken coops", farm.getStableList().size() == 1);
-        Assert.assertTrue("Number of fields", farm.getStableList().size() == 1);
+        Assert.assertTrue("Number of stables", farm.getStables().size() == 1);
+        Assert.assertTrue("Number of chicken coops", farm.getStables().size() == 1);
+        Assert.assertTrue("Number of fields", farm.getStables().size() == 1);
+    }
+
+    @Test
+    public void addStablesTest() {
+        Farm farm = new Farm();
+        farm.addStables(new Stable());
+        farm.addStables(new Stable());
+        ArrayList<Stable> stables = farm.getStables();
+
+        Assert.assertTrue(stables.size() == 2);
+    }
+
+    @Test
+    public void addChickenCoopTest() {
+        Farm farm = new Farm();
+        farm.addChickenCoops(new ChickenCoop());
+        farm.addChickenCoops(new ChickenCoop());
+        ArrayList<ChickenCoop> chickenCoops = farm.getChickenCoops();
+
+        Assert.assertTrue(chickenCoops.size() == 2);
+    }
+
+    @Test
+    public void addFieldTest() {
+        Farm farm = new Farm();
+        farm.addFields(new Field());
+        farm.addFields(new Field());
+        ArrayList<Field> fields = farm.getFields();
+
+        Assert.assertTrue(fields.size() == 2);
+    }
+
+    @Test
+    public void setFarmHouse() {
+        FarmHouse farmHouse = new FarmHouse();
+        farm.setFarmHouse(farmHouse);
+        Assert.assertEquals(farmHouse, farm.getFarmHouse());
     }
 }
 

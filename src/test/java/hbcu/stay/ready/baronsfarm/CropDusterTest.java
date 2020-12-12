@@ -5,11 +5,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static java.util.Arrays.asList;
-
 public class CropDusterTest {
 
     CropDuster cropDuster;
@@ -25,7 +20,7 @@ public class CropDusterTest {
         CropRow cropRow = new CropRow(cornStalk);
         Field field = new Field(cropRow);
         Farm farm = new Farm();
-        farm.addToFieldList(field);
+        farm.addFields(field);
 
         cropDuster.operate(farm);
         Assert.assertTrue(cornStalk.getHasBeenFertilized());
