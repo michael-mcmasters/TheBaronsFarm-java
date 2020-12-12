@@ -36,7 +36,7 @@ public class ChickenTest {
     public void yield() {
         chicken.harvest();
         chicken.fertilize();
-        Edible edible = chicken.yield();
+        EdibleEgg edible = chicken.yield();
         Assert.assertNotNull(edible);
     }
 }

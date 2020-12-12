@@ -26,7 +26,7 @@ public class Chicken extends Produce implements Animal {
         hasBeenFertilized = true;
     }
 
-    public Edible yield() {
+    public EdibleEgg yield() {
         if (hasBeenFertilized && hasBeenHarvested) {
             EdibleEgg egg = new EdibleEgg();
             return egg;

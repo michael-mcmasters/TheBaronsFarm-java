@@ -4,23 +4,27 @@ import hbcu.stay.ready.baronsfarm.interfaces.Crop;
 import hbcu.stay.ready.baronsfarm.interfaces.Edible;
 
 public class CornStalk extends Crop {
-    public void harvest() {
-
-    }
-
-    public void fertilize() {
-
-    }
-
-    public Edible yield() {
-        return null;
-    }
 
     public Boolean getHasBeenHarvested() {
-        return null;
+        return hasBeenHarvested;
     }
 
     public Boolean getHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public void harvest() {
+        super.hasBeenHarvested = true;
+    }
+
+    public void fertilize() {
+        hasBeenFertilized = true;
+    }
+
+    public EarCorn yield() {
+        if (hasBeenFertilized && hasBeenHarvested) {
+            return new EarCorn();
+        }
         return null;
     }
 }
