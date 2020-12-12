@@ -10,15 +10,15 @@ public class Farmer extends Person implements Rider, Botanist {
         this.farm = farm;
     }
 
-    public void mouseRideable(Rideable rideable) {
-
+    public void mountRideable(Rideable rideable) {
+        System.out.println("Wooooo!");
     }
 
     public void dismountRideable(Rideable rideable) {
-
+        System.out.println("Aw :(");
     }
 
     public void plant(Crop crop, CropRow cropRow) {
-
+        cropRow.plantCrop(crop);
     }
 }

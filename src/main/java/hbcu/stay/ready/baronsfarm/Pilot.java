@@ -5,7 +5,7 @@ import hbcu.stay.ready.baronsfarm.interfaces.Rideable;
 import hbcu.stay.ready.baronsfarm.interfaces.Rider;
 
 public class Pilot extends Person implements Rider {
-    public void mouseRideable(Rideable rideable) {
+    public void mountRideable(Rideable rideable) {
 
     }
 
