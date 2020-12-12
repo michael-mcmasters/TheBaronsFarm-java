@@ -6,6 +6,10 @@ public class Farmer extends Person implements Rider, Botanist {
 
     private Farm farm;
 
+    public Farmer() {
+        this.farm = new Farm();
+    }
+
     public Farmer(Farm farm) {
         this.farm = farm;
     }
