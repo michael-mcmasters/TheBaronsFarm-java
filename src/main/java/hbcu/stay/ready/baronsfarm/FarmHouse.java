@@ -9,16 +9,12 @@ public class FarmHouse {
     private ArrayList<Person> personList;
 
     public FarmHouse() {
-        personList = new ArrayList<Person>();
+        personList = new ArrayList<>();
     }
 
     public FarmHouse(Person person) {
         this.personList = new ArrayList<>();
         personList.add(person);
-    }
-
-    public FarmHouse(ArrayList<Person> persons) {
-        this.personList = persons;
     }
 
     public ArrayList<Person> getPersonList() {
