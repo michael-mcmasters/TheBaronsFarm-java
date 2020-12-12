@@ -31,6 +31,6 @@ public class CornStalkTest {
         cornStalk.harvest();
         cornStalk.fertilize();
         EarCorn earCorn = cornStalk.yield();
-        Assert.assertTrue(earCorn != null);
+        Assert.assertNotNull(earCorn);
     }
 }

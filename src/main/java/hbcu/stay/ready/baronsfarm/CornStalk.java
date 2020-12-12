@@ -13,7 +13,7 @@ public class CornStalk extends Crop {
     }
 
     public void harvest() {
-        super.hasBeenHarvested = true;
+        hasBeenHarvested = true;
     }
 
     public void fertilize() {
@@ -21,9 +21,8 @@ public class CornStalk extends Crop {
     }
 
     public EarCorn yield() {
-        if (hasBeenFertilized && hasBeenHarvested) {
+        if (hasBeenFertilized && hasBeenHarvested)
             return new EarCorn();
-        }
         return null;
     }
 }
