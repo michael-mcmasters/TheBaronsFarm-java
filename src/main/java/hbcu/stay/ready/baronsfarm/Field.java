@@ -6,6 +6,10 @@ public class Field {
 
     private ArrayList<CropRow> cropRows;
 
+    public Field() {
+
+    }
+
     public Field(int numOfCropRows) {
         cropRows = new ArrayList<>();
         addCropRow(numOfCropRows);

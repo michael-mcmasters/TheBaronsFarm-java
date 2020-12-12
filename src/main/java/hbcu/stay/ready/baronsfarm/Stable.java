@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Stable {
     private ArrayList<Horse> horseList;
 
+    public Stable() {
+
+    }
+
     public Stable(int numOfHorses) {
 
     }

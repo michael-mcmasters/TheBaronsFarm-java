@@ -18,7 +18,10 @@ public class Farm {
     }
 
     public Farm(ArrayList<Stable> stableList, ArrayList<ChickenCoop> chickenCoopList, ArrayList<Field> fieldList, FarmHouse farmHouse) {
-
+        this.stableList = stableList;
+        this.chickenCoopList = chickenCoopList;
+        this.fieldList = fieldList;
+        this.farmHouse = farmHouse;
     }
 
     public ArrayList<Stable> getStableList() {

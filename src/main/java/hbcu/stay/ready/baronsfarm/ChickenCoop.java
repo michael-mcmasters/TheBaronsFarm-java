@@ -6,6 +6,10 @@ public class ChickenCoop {
 
     private ArrayList<Chicken> chickenList;
 
+    public ChickenCoop() {
+
+    }
+
     public ChickenCoop(int numOfChickens) {
         chickenList = new ArrayList<>();
         addChicken((numOfChickens));
