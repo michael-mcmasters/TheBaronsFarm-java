@@ -17,10 +17,10 @@ public class TomatoPlant extends Crop {
     }
 
     public Boolean getHasBeenHarvested() {
-        return null;
+        return hasBeenHarvested;
     }
 
     public Boolean getHasBeenFertilized() {
-        return null;
+        return hasBeenFertilized;
     }
 }
