@@ -9,7 +9,7 @@ public class Pilot extends Person implements Rider {
     public String mountRideable(Rideable rideable) {
         String sound = "";
         if (rideable != null) {
-            sound += "Wooooo!";
+            sound += "I'm so high up!";
             System.out.println(sound);
         }
         return sound;
@@ -18,7 +18,7 @@ public class Pilot extends Person implements Rider {
     public String dismountRideable(Rideable rideable) {
         String sound = "";
         if (rideable != null) {
-            sound += "Aw :(";
+            sound += "Till next time!";
             System.out.println(sound);
         }
         return sound;

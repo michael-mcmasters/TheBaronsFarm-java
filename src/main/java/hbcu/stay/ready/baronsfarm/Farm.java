@@ -88,4 +88,10 @@ public class Farm {
         }
         return cropRows;
     }
+
+    public List<Horse> getAllHorses() {
+        List<Horse> horses = new ArrayList<>();
+        stableList.forEach(s -> horses.addAll(s.getHorseList()));
+        return horses;
+    }
 }

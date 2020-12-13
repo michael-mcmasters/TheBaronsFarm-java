@@ -16,51 +16,26 @@ public class SundayTest {
     private final Baron baron = Baron.getInstance();
     private final Baroness baroness = Baroness.getInstance();
 
-//    @Test
-//    public void sundayTest() {
-////        ArrayList<Stable> stables = baron.getFarm().getStables();
-////
-////        ArrayList<Horse> horses = new ArrayList<>();
-////        stables.forEach(s -> horses.addAll(s.getHorseList()));
-////
-////        System.out.println(horses.size());
-//
-////        for (Horse horse : horses) {
-////            baron.mountRideable(horse);
-////            baroness.mountRideable(horse);
-////
-////            EarCorn earCorn = new EarCorn();
-////            //horse.eat()
-////        }
-//    }
-
-
     @Test
     public void baronMountHorse() {
-        List<Stable> stables = baron.getFarm().getStables();
-        List<Horse> horses = new ArrayList<>();
-        stables.forEach(s -> horses.addAll(s.getHorseList()));
+        List<Horse> horses = baron.getFarm().getAllHorses();
 
         String actual = "";
         for (Horse horse : horses) {
             actual = baron.mountRideable(horse);
-            baron.mountRideable(horse);
         }
         Assert.assertEquals("Wooooo!", actual);
     }
 
     @Test
     public void baronessMountHorse() {
-        List<Stable> stables = baron.getFarm().getStables();
-        List<Horse> horses = new ArrayList<>();
-        stables.forEach(s -> horses.addAll(s.getHorseList()));
+        List<Horse> horses = baron.getFarm().getAllHorses();
 
         String actual = "";
         for (Horse horse : horses) {
             actual = baroness.mountRideable(horse);
-            baroness.mountRideable(horse);
         }
-        Assert.assertEquals("Wooooo!", actual);
+        Assert.assertEquals("I'm so high up!", actual);
     }
 
     @Test
@@ -84,9 +59,7 @@ public class SundayTest {
         }
 
         // Feed Horses
-        List<Stable> stables = baron.getFarm().getStables();
-        List<Horse> horses = new ArrayList<>();
-        stables.forEach(s -> horses.addAll(s.getHorseList()));
+        List<Horse> horses = baron.getFarm().getAllHorses();
 
         String actual = "";
         for (Horse horse : horses) {
