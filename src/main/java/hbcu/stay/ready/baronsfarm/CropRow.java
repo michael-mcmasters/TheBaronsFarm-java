@@ -3,6 +3,7 @@ package hbcu.stay.ready.baronsfarm;
 import hbcu.stay.ready.baronsfarm.interfaces.Crop;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CropRow {
 
@@ -10,14 +11,12 @@ public class CropRow {
 
     public CropRow(Crop... crops) {
         this.crops = new ArrayList<>();
-        for (Crop c : crops) {
-            plantCrop(c);
-        }
+        plantCrop(crops);
     }
 
-    // Adds plant to list.
-    public void plantCrop(Crop crop) {
-        crops.add(crop);
+    // Crops are "planted" by being added to the list.
+    public void plantCrop(Crop... newCrops) {
+        Collections.addAll(crops, newCrops);
     }
 
     public ArrayList<Crop> getCrops() {

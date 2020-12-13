@@ -15,11 +15,35 @@ public class SundayTest {
 
     @BeforeClass
     public static void setUp() {
-        //EarCorn earCorn = new EarCorn();
-        //Baron.getInstance().getFarm().getFields();
-
         Farm farm = new Farm(1, 1, 1, new FarmHouse());
         Baron.getInstance().setFarm(farm);
+
+        CropRow cropRow1 = new CropRow(new CornStalk());
+        CropRow cropRow2 = new CropRow(new TomatoPlant());
+        CropRow cropRow3 = new CropRow(new CornStalk());
+        CropRow cropRow4 = new CropRow(new CornStalk());
+        CropRow cropRow5 = new CropRow(new TomatoPlant());
+        Field field = new Field(cropRow1, cropRow2, cropRow3, cropRow4, cropRow5);
+        farm.addFields(field);
+
+
+
+
+
+
+
+
+
+        CornStalk cornStalk1 = new CornStalk();
+        CornStalk cornStalk2 = new CornStalk();
+        CornStalk cornStalk3 = new CornStalk();
+        cornStalk1.harvest();
+        cornStalk1.fertilize();
+        cornStalk2.harvest();
+        cornStalk2.fertilize();
+        cornStalk3.harvest();
+        cornStalk3.fertilize();
+        farm.getFields().get(0).getCropRows().get(0).plantCrop(cornStalk1, cornStalk2, cornStalk3);
     }
 
     @Test
