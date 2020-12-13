@@ -1,7 +1,10 @@
 package hbcu.stay.ready.baronsfarm;
 
+import hbcu.stay.ready.baronsfarm.interfaces.Crop;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Field {
 
@@ -22,5 +25,14 @@ public class Field {
 
     public ArrayList<CropRow> getCropRows() {
         return cropRows;
+    }
+
+    // ToDo: Create test
+    public List<Crop> getCropsInAllRows() {
+        List<Crop> crops = new ArrayList<>();
+        for (CropRow cropRow : cropRows) {
+            Collections.addAll(cropRow.getCrops());
+        }
+        return crops;
     }
 }

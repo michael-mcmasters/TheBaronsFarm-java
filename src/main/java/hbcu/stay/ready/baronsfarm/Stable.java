@@ -12,6 +12,7 @@ public class Stable {
 
     // Todo: add test
     public Stable(int numOfHorses) {
+        this.horseList = new ArrayList<>();
         for (int i = 0; i < numOfHorses; i++) {
             addHorses(new Horse());
         }

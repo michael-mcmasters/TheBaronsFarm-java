@@ -29,18 +29,20 @@ public class Baron extends Farmer {
     }
 
     private ArrayList<Stable> getStables() {
-        Stable stable1 = new Stable(3);
-        Stable stable2 = new Stable(3);
-        Stable stable3 = new Stable(4);
-        return (ArrayList) List.of(stable1, stable2, stable3);
+        ArrayList<Stable> stables = new ArrayList<>();
+        stables.add(new Stable(3));
+        stables.add(new Stable(3));
+        stables.add(new Stable(4));
+        return stables;
     }
 
     private ArrayList<ChickenCoop> getChickenCoops() {
-        ChickenCoop chickenCoop1 = new ChickenCoop(4);
-        ChickenCoop chickenCoop2 = new ChickenCoop(4);
-        ChickenCoop chickenCoop3 = new ChickenCoop(4);
-        ChickenCoop chickenCoop4 = new ChickenCoop(3);
-        return (ArrayList) List.of(chickenCoop1, chickenCoop2, chickenCoop3, chickenCoop4);
+        ArrayList<ChickenCoop> chickenCoops = new ArrayList<>();
+        chickenCoops.add(new ChickenCoop(4));
+        chickenCoops.add(new ChickenCoop(4));
+        chickenCoops.add(new ChickenCoop(4));
+        chickenCoops.add(new ChickenCoop(3));
+        return chickenCoops;
     }
 
     private ArrayList<Field> getField() {
@@ -50,7 +52,9 @@ public class Baron extends Farmer {
         CropRow cropRow4 = new CropRow(new CornStalk());
         CropRow cropRow5 = new CropRow(new TomatoPlant());
         Field field = new Field(cropRow1, cropRow2, cropRow3, cropRow4, cropRow5);
-        return (ArrayList) List.of(field);
+        ArrayList<Field> fields = new ArrayList<>();
+        fields.add(field);
+        return fields;
     }
 
     private FarmHouse getFarmHouse() {
