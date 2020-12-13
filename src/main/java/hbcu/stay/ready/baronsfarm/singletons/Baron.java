@@ -3,22 +3,20 @@ package hbcu.stay.ready.baronsfarm.singletons;
 import hbcu.stay.ready.baronsfarm.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Baron extends Farmer {
 
     private static Baron instance;
 
     private Baron() {
-        CropRow cropRow1 = new CropRow(new CornStalk());
-        CropRow cropRow2 = new CropRow(new TomatoPlant());
-        CropRow cropRow3 = new CropRow(new CornStalk());
-        CropRow cropRow4 = new CropRow(new CornStalk());
-        CropRow cropRow5 = new CropRow(new TomatoPlant());
-        Field field = new Field(cropRow1, cropRow2, cropRow3, cropRow4, cropRow5);
-        ArrayList<ChickenCoop> chickenCoops;
+        ArrayList<Stable> stables = getStables();
+        ArrayList<ChickenCoop> chickenCoops = getChickenCoops();
+        ArrayList<Field> fields = getField();
+        FarmHouse farmHouse = new FarmHouse(new Farmer(new Farm()));
 
-
-        //Farm farm = new Farm(field);
+        Farm farm = new Farm(stables, chickenCoops, fields, farmHouse);
     }
 
     public static Baron getInstance() {
@@ -28,15 +26,21 @@ public class Baron extends Farmer {
         return instance;
     }
 
-    private void getStable() {
-
+    private ArrayList<Stable> getStables() {
+        return null;
     }
 
-    private void getChickenCoop() {
-
+    private ArrayList<ChickenCoop> getChickenCoops() {
+        return null;
     }
 
-    private void getField() {
-
+    private ArrayList<Field> getField() {
+        CropRow cropRow1 = new CropRow(new CornStalk());
+        CropRow cropRow2 = new CropRow(new TomatoPlant());
+        CropRow cropRow3 = new CropRow(new CornStalk());
+        CropRow cropRow4 = new CropRow(new CornStalk());
+        CropRow cropRow5 = new CropRow(new TomatoPlant());
+        Field field = new Field(cropRow1, cropRow2, cropRow3, cropRow4, cropRow5);
+        return (ArrayList) List.of(field);
     }
 }
