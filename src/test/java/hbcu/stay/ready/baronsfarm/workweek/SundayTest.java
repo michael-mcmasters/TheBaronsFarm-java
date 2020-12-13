@@ -62,6 +62,8 @@ public class SundayTest {
             List<Crop> crops = field.getCropsInAllRows();
             for (Crop crop : crops) {
                 if (crop instanceof CornStalk) {
+                    crop.harvest();
+                    crop.fertilize();
                     Edible earCorn = crop.yield();
                     if (earCorn != null) {
                         // Downcast because if it is of type CornStalk, we know it is EarCorn.

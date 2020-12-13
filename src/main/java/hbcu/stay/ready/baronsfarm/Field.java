@@ -31,7 +31,10 @@ public class Field {
     public List<Crop> getCropsInAllRows() {
         List<Crop> crops = new ArrayList<>();
         for (CropRow cropRow : cropRows) {
-            Collections.addAll(cropRow.getCrops());
+            ArrayList<Crop> cropsList2 = cropRow.getCrops();
+            for (Crop c : cropsList2) {
+                crops.add(c);
+            }
         }
         return crops;
     }
