@@ -25,4 +25,8 @@ public class Farmer extends Person implements Rider, Botanist {
     public void plant(Crop crop, CropRow cropRow) {
         cropRow.plantCrop(crop);
     }
+
+    public Farm getFarm() {
+        return farm;
+    }
 }

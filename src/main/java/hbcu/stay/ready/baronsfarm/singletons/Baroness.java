@@ -1,7 +1,14 @@
 package hbcu.stay.ready.baronsfarm.singletons;
 
-public class Baroness {
+import hbcu.stay.ready.baronsfarm.Pilot;
 
-    //private static
+public class Baroness extends Pilot {
 
+    private static Baroness instance;
+
+    public static Baroness getInstance() {
+        if (instance == null)
+            instance = new Baroness();
+        return instance;
+    }
 }

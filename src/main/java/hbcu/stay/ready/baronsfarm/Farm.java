@@ -2,6 +2,7 @@ package hbcu.stay.ready.baronsfarm;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.IntStream;
 
 public class Farm {
 
@@ -11,10 +12,27 @@ public class Farm {
     private FarmHouse farmHouse;
 
     public Farm() {
-        stableList = new ArrayList<>();
-        chickenCoopList = new ArrayList<>();
-        fieldList = new ArrayList<>();
-        farmHouse = new FarmHouse(new Farmer(this));
+        this.stableList = new ArrayList<>();
+        this.chickenCoopList = new ArrayList<>();
+        this.fieldList = new ArrayList<>();
+        this.farmHouse = new FarmHouse(new Farmer(this));
+    }
+
+    // ToDo: create test for this constructor.
+    public Farm(int numOfStables, int numOfChickenCoops, int numOfFields, FarmHouse farmHouse) {
+        while (numOfStables > 0) {
+            addStables(new Stable());
+            numOfStables--;
+        }
+        while (numOfChickenCoops > 0) {
+            addChickenCoops(new ChickenCoop());
+            numOfChickenCoops--;
+        }
+        while (numOfFields > 0) {
+            addFields(new Field());
+            numOfFields--;
+        }
+        this.farmHouse = farmHouse != null ? farmHouse : new FarmHouse();
     }
 
     public Farm(ArrayList<Stable> stableList, ArrayList<ChickenCoop> chickenCoopList, ArrayList<Field> fieldList, FarmHouse farmHouse) {
