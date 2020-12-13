@@ -1,13 +1,12 @@
 package hbcu.stay.ready.baronsfarm;
 
-import hbcu.stay.ready.baronsfarm.enums.CropType;
+import hbcu.stay.ready.baronsfarm.enums.EdibleType;
 import hbcu.stay.ready.baronsfarm.interfaces.Crop;
 import hbcu.stay.ready.baronsfarm.interfaces.Edible;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Farm {
 
@@ -100,14 +99,28 @@ public class Farm {
         return horses;
     }
 
-    public List<Edible> getCropOfType(CropType cropType) {
-        List<Crop> crops = getAllCrops();
-        if (cropType == CropType.CORNSTALK) {
 
+    // ToDo: make test.
+    // Gets every crop in every field and crop row. Returns every crop that yields an edible.
+    public List<Edible> getEdibleOfType(EdibleType edibleType) {
+        List<Crop> crops = getAllCrops();
+
+        if (edibleType == EdibleType.EDIBLEEGG) {
+            List<Edible> edibleEggs = new ArrayList<>();
+            for (Crop crop : crops) {
+                if (crop instanceof CornStalk) {
+                    Edible edible = crop.yield();
+                    if (edible != null) {
+                        edibleEggs.add(edible);
+                    }
+                }
+            }
+            return edibleEggs;
+        }
+
+        else if (edibleType == EdibleType.EARCORN) {
             List<Edible> earCorns = new ArrayList<>();
             for (Crop crop : crops) {
-                crop.fertilize();
-                crop.harvest();
                 if (crop instanceof CornStalk) {
                     Edible edible = crop.yield();
                     if (edible != null) {
@@ -117,10 +130,19 @@ public class Farm {
             }
             return earCorns;
 
-
-        } else if (cropType == CropType.TOMATOPLANT) {
-
+        } else if (edibleType == EdibleType.TOMATO) {
+            List<Edible> tomatos = new ArrayList<>();
+            for (Crop crop : crops) {
+                if (crop instanceof CornStalk) {
+                    Edible edible = crop.yield();
+                    if (edible != null) {
+                        tomatos.add(edible);
+                    }
+                }
+            }
+            return tomatos;
         }
+
         return null;
     }
 
