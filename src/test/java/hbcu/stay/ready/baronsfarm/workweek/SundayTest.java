@@ -1,8 +1,6 @@
 package hbcu.stay.ready.baronsfarm.workweek;
 
-import hbcu.stay.ready.baronsfarm.EarCorn;
-import hbcu.stay.ready.baronsfarm.Horse;
-import hbcu.stay.ready.baronsfarm.Stable;
+import hbcu.stay.ready.baronsfarm.*;
 import hbcu.stay.ready.baronsfarm.singletons.Baron;
 import hbcu.stay.ready.baronsfarm.singletons.Baroness;
 import org.junit.BeforeClass;
@@ -17,18 +15,23 @@ public class SundayTest {
 
     @BeforeClass
     public static void setUp() {
-        EarCorn earCorn = new EarCorn();
-        Baron.getInstance().getFarm().getFields();
+        //EarCorn earCorn = new EarCorn();
+        //Baron.getInstance().getFarm().getFields();
+
+        Farm farm = new Farm(1, 1, 1, new FarmHouse());
+        Baron.getInstance().setFarm(farm);
     }
 
     @Test
     public void sundayTest() {
-        ArrayList<Stable> stables = Baron.getInstance().getFarm().getStables();
-        stables.forEach(s -> s.addHorses(new Horse(), new Horse(), new Horse(), new Horse()));
+        ArrayList<Stable> stables = baron.getFarm().getStables();
+        stables.forEach(s -> s.addHorses(new Horse(), new Horse(), new Horse(), new Horse(), new Horse()));
+
+
         ArrayList<Horse> horses = new ArrayList<>();
         stables.forEach(s -> horses.addAll(s.getHorseList()));
 
-        System.out.println(horses);
+        System.out.println(horses.size());
 
 //        for (Horse horse : horses) {
 //            baron.mountRideable(horse);

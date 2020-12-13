@@ -29,4 +29,9 @@ public class Farmer extends Person implements Rider, Botanist {
     public Farm getFarm() {
         return farm;
     }
+
+    // ToDo: create test for this.
+    public void setFarm(Farm farm) {
+        this.farm = farm;
+    }
 }

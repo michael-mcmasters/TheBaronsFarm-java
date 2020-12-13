@@ -20,6 +20,10 @@ public class Farm {
 
     // ToDo: create test for this constructor.
     public Farm(int numOfStables, int numOfChickenCoops, int numOfFields, FarmHouse farmHouse) {
+        this.stableList = new ArrayList<>();
+        this.chickenCoopList = new ArrayList<>();
+        this.fieldList = new ArrayList<>();
+        this.farmHouse = new FarmHouse(new Farmer(this));
         while (numOfStables > 0) {
             addStables(new Stable());
             numOfStables--;
@@ -32,7 +36,7 @@ public class Farm {
             addFields(new Field());
             numOfFields--;
         }
-        this.farmHouse = farmHouse != null ? farmHouse : new FarmHouse();
+        this.farmHouse = farmHouse;
     }
 
     public Farm(ArrayList<Stable> stableList, ArrayList<ChickenCoop> chickenCoopList, ArrayList<Field> fieldList, FarmHouse farmHouse) {
