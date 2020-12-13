@@ -1,5 +1,9 @@
 package hbcu.stay.ready.baronsfarm;
 
+import hbcu.stay.ready.baronsfarm.enums.CropType;
+import hbcu.stay.ready.baronsfarm.interfaces.Crop;
+import hbcu.stay.ready.baronsfarm.interfaces.Edible;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -89,9 +93,75 @@ public class Farm {
         return cropRows;
     }
 
+    // ToDo: make test.
     public List<Horse> getAllHorses() {
         List<Horse> horses = new ArrayList<>();
         stableList.forEach(s -> horses.addAll(s.getHorseList()));
         return horses;
     }
+
+    public List<Edible> getCropOfType(CropType cropType) {
+        List<Crop> crops = getAllCrops();
+        if (cropType == CropType.CORNSTALK) {
+
+            List<Edible> earCorns = new ArrayList<>();
+            for (Crop crop : crops) {
+                crop.fertilize();
+                crop.harvest();
+                if (crop instanceof CornStalk) {
+                    Edible edible = crop.yield();
+                    if (edible != null) {
+                        earCorns.add(edible);
+                    }
+                }
+            }
+            return earCorns;
+
+
+        } else if (cropType == CropType.TOMATOPLANT) {
+
+        }
+        return null;
+    }
+
+    // ToDo: make test.
+    public List<Crop> getAllCrops() {
+        List<Crop> crops = new ArrayList<>();
+        for (Field field : fieldList) {
+            List<Crop> cropsInRow = field.getCropsInAllRows();
+            for (Crop c : cropsInRow) {
+                crops.add(c);
+            }
+        }
+        return crops;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
