@@ -1,9 +1,11 @@
 package hbcu.stay.ready.baronsfarm.singletons;
 
 import hbcu.stay.ready.baronsfarm.*;
+import hbcu.stay.ready.baronsfarm.interfaces.FarmVehicle;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Baron extends Farmer {
@@ -27,11 +29,18 @@ public class Baron extends Farmer {
     }
 
     private ArrayList<Stable> getStables() {
-        return null;
+        Stable stable1 = new Stable(3);
+        Stable stable2 = new Stable(3);
+        Stable stable3 = new Stable(4);
+        return (ArrayList) List.of(stable1, stable2, stable3);
     }
 
     private ArrayList<ChickenCoop> getChickenCoops() {
-        return null;
+        ChickenCoop chickenCoop1 = new ChickenCoop(4);
+        ChickenCoop chickenCoop2 = new ChickenCoop(4);
+        ChickenCoop chickenCoop3 = new ChickenCoop(4);
+        ChickenCoop chickenCoop4 = new ChickenCoop(3);
+        return (ArrayList) List.of(chickenCoop1, chickenCoop2, chickenCoop3, chickenCoop4);
     }
 
     private ArrayList<Field> getField() {
@@ -42,5 +51,11 @@ public class Baron extends Farmer {
         CropRow cropRow5 = new CropRow(new TomatoPlant());
         Field field = new Field(cropRow1, cropRow2, cropRow3, cropRow4, cropRow5);
         return (ArrayList) List.of(field);
+    }
+
+    private FarmHouse getFarmHouse() {
+        FarmHouse farmHouse = new FarmHouse(this);
+        farmHouse.addVehicles(new Tractor(), new Tractor(), new CropDuster(), new CropDuster());
+        return farmHouse;
     }
 }
