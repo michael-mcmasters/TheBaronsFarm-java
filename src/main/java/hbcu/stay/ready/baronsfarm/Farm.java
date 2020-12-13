@@ -2,6 +2,7 @@ package hbcu.stay.ready.baronsfarm;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class Farm {
@@ -76,5 +77,15 @@ public class Farm {
 
     public FarmHouse getFarmHouse() {
         return farmHouse;
+    }
+
+    // ToDo: make test.
+    public List<CropRow> getAllCropRows() {
+        List<CropRow> cropRows = new ArrayList<>();
+        for (Field field : fieldList) {
+            List<CropRow> cr = field.getCropRows();
+            cr.forEach(c -> cropRows.add(c));
+        }
+        return cropRows;
     }
 }

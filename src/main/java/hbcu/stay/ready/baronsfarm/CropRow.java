@@ -11,11 +11,11 @@ public class CropRow {
 
     public CropRow(Crop... crops) {
         this.crops = new ArrayList<>();
-        plantCrop(crops);
+        plantCrops(crops);
     }
 
     // Crops are "planted" by being added to the list.
-    public void plantCrop(Crop... newCrops) {
+    public void plantCrops(Crop... newCrops) {
         Collections.addAll(crops, newCrops);
     }
 

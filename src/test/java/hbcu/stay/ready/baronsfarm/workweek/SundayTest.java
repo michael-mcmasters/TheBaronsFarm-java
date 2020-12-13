@@ -6,10 +6,8 @@ import hbcu.stay.ready.baronsfarm.interfaces.Edible;
 import hbcu.stay.ready.baronsfarm.singletons.Baron;
 import hbcu.stay.ready.baronsfarm.singletons.Baroness;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,7 +64,7 @@ public class SundayTest {
     }
 
     @Test
-    public void feedHorse() {
+    public void bothFeedHorses() {
         // Get Ear Corn
         List<EarCorn> earCornList = new ArrayList<>();
         List<Field> fields = baron.getFarm().getFields();
@@ -97,6 +95,21 @@ public class SundayTest {
         }
 
         Assert.assertEquals("Horse eats the edible. He seems to really like it!", actual);
+    }
+
+    @Test
+    // Assert that a CropRow has 3 additional items.
+    public void plantCrops() {
+        List<CropRow> cropRows = baron.getFarm().getAllCropRows();
+        int sizeBefore = cropRows.get(0).getCrops().size();
+        for (CropRow cropRow : cropRows) {
+            cropRow.plantCrops(new TomatoPlant(), new CornStalk(), new TomatoPlant());
+        }
+
+        int expected = sizeBefore + 3;
+        int actual = cropRows.get(0).getCrops().size();
+
+        Assert.assertEquals(expected, actual);
     }
 }
 

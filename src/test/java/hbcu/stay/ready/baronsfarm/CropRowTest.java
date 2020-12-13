@@ -1,7 +1,6 @@
 package hbcu.stay.ready.baronsfarm;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class CropRowTest {
@@ -21,9 +20,9 @@ public class CropRowTest {
     @Test
     public void plantCropTest() {
         CropRow cropRow = new CropRow();
-        cropRow.plantCrop(new CornStalk());
-        cropRow.plantCrop(new TomatoPlant());
-        cropRow.plantCrop(new TomatoPlant());
+        cropRow.plantCrops(new CornStalk());
+        cropRow.plantCrops(new TomatoPlant());
+        cropRow.plantCrops(new TomatoPlant());
         Assert.assertTrue(cropRow.getCrops().size() == 3);
     }
 }
