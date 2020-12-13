@@ -64,7 +64,7 @@ public class SundayTest {
                 if (crop instanceof CornStalk) {
                     Edible earCorn = crop.yield();
                     if (earCorn != null) {
-                        // Downcast because if it is of cypte CornStalk, we know it is EarCorn.
+                        // Downcast because if it is of type CornStalk, we know it is EarCorn.
                         earCornList.add((EarCorn) earCorn);
                     }
                 }
