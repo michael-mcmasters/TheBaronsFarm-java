@@ -1,6 +1,7 @@
 package hbcu.stay.ready.baronsfarm.singletons;
 
 import hbcu.stay.ready.baronsfarm.*;
+import hbcu.stay.ready.baronsfarm.interfaces.Crop;
 import hbcu.stay.ready.baronsfarm.interfaces.FarmVehicle;
 
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ public class Baron extends Farmer {
 
         Farm farm = new Farm(stables, chickenCoops, fields, farmHouse);
         super.setFarm(farm);
+
+        fertilizeAndHarvestSomeCrops(20);
     }
 
     public static Baron getInstance() {
@@ -49,7 +52,7 @@ public class Baron extends Farmer {
     private ArrayList<Field> getField() {
         CropRow cropRow1 = new CropRow(new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk());
         CropRow cropRow2 = new CropRow(new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant());
-        CropRow cropRow3 = new CropRow(new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(),new CornStalk(), new CornStalk());
+        CropRow cropRow3 = new CropRow(new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk());
         CropRow cropRow4 = new CropRow(new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk());
         CropRow cropRow5 = new CropRow(new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant());
 
@@ -63,5 +66,18 @@ public class Baron extends Farmer {
         FarmHouse farmHouse = new FarmHouse(this);
         farmHouse.addVehicles(new Tractor(), new Tractor(), new CropDuster(), new CropDuster());
         return farmHouse;
+    }
+
+    // ToDo: Make test.
+    // Fertilize and harvest n amount of crops.
+    // This is done so that in the Sunday test, when feeding crops to horses, they are already ready to yield an edible.
+    private void fertilizeAndHarvestSomeCrops(int numToPrepare) {
+        List<Crop> crops = getFarm().getAllCrops();
+        for (int i = 0; i < numToPrepare; i++) {
+            if (crops.get(i) == null)
+                break;
+            crops.get(i).fertilize();
+            crops.get(i).harvest();
+        }
     }
 }
