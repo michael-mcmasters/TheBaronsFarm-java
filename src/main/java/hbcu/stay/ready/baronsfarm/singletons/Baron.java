@@ -47,11 +47,12 @@ public class Baron extends Farmer {
     }
 
     private ArrayList<Field> getField() {
-        CropRow cropRow1 = new CropRow(new CornStalk());
-        CropRow cropRow2 = new CropRow(new TomatoPlant());
-        CropRow cropRow3 = new CropRow(new CornStalk());
-        CropRow cropRow4 = new CropRow(new CornStalk());
-        CropRow cropRow5 = new CropRow(new TomatoPlant());
+        CropRow cropRow1 = new CropRow(new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk());
+        CropRow cropRow2 = new CropRow(new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant());
+        CropRow cropRow3 = new CropRow(new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(),new CornStalk(), new CornStalk());
+        CropRow cropRow4 = new CropRow(new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk());
+        CropRow cropRow5 = new CropRow(new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant(), new TomatoPlant());
+
         Field field = new Field(cropRow1, cropRow2, cropRow3, cropRow4, cropRow5);
         ArrayList<Field> fields = new ArrayList<>();
         fields.add(field);

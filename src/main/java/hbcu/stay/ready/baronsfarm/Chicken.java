@@ -35,7 +35,12 @@ public class Chicken extends Produce implements Animal {
     }
 
     @Override
-    public void eat(Edible edible) {
-        System.out.println("Chicken eats an edible. He seems to like it.");
+    public String eat(Edible edible) {
+        String message = "";
+        if (edible != null) {
+            message += "Chicken eats the edible. He seems to really like it!";
+            System.out.println(message);
+        }
+        return message;
     }
 }

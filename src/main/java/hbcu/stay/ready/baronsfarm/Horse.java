@@ -11,7 +11,12 @@ public class Horse implements Rideable, Animal {
     }
 
     @Override
-    public void eat(Edible edible) {
-        System.out.println("Horse eats the edible. He seems to really like it!");
+    public String eat(Edible edible) {
+        String message = "";
+        if (edible != null) {
+            message += "Horse eats the edible. He seems to really like it!";
+            System.out.println(message);
+        }
+        return message;
     }
 }

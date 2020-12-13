@@ -67,14 +67,9 @@ public class SundayTest {
 
     @Test
     public void feedHorse() {
-//        List<Field> fields = baron.getFarm().getFields();
-//        List<EarCorn> earCorn = new ArrayList<>();
-//        for (Field field : fields) {
-//            ArrayList
-//        }
-
-        List<Field> fields = baron.getFarm().getFields();
+        // Get Ear Corn
         List<EarCorn> earCornList = new ArrayList<>();
+        List<Field> fields = baron.getFarm().getFields();
         for (Field field : fields) {
             List<Crop> crops = field.getCropsInAllRows();
             for (Crop crop : crops) {
@@ -89,7 +84,19 @@ public class SundayTest {
                 }
             }
         }
-        System.out.println(earCornList.size());
+
+        // Feed Horses
+        List<Stable> stables = baron.getFarm().getStables();
+        List<Horse> horses = new ArrayList<>();
+        stables.forEach(s -> horses.addAll(s.getHorseList()));
+
+        String actual = "";
+        for (Horse horse : horses) {
+            EarCorn earCorn = earCornList.remove(earCornList.size() - 1);
+            actual = horse.eat(earCorn);
+        }
+
+        Assert.assertEquals("Horse eats the edible. He seems to really like it!", actual);
     }
 }
 
