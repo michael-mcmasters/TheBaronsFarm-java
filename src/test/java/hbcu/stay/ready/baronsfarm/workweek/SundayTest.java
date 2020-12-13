@@ -5,6 +5,7 @@ import hbcu.stay.ready.baronsfarm.interfaces.Crop;
 import hbcu.stay.ready.baronsfarm.interfaces.Edible;
 import hbcu.stay.ready.baronsfarm.singletons.Baron;
 import hbcu.stay.ready.baronsfarm.singletons.Baroness;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -37,15 +38,31 @@ public class SundayTest {
 
 
     @Test
-    public void rideHorse() {
+    public void baronMountHorse() {
         List<Stable> stables = baron.getFarm().getStables();
         List<Horse> horses = new ArrayList<>();
         stables.forEach(s -> horses.addAll(s.getHorseList()));
 
+        String actual = "";
         for (Horse horse : horses) {
-            baron.mountRideable(horse);
+            actual = baron.mountRideable(horse);
             baron.mountRideable(horse);
         }
+        Assert.assertEquals("Wooooo!", actual);
+    }
+
+    @Test
+    public void baronessMountHorse() {
+        List<Stable> stables = baron.getFarm().getStables();
+        List<Horse> horses = new ArrayList<>();
+        stables.forEach(s -> horses.addAll(s.getHorseList()));
+
+        String actual = "";
+        for (Horse horse : horses) {
+            actual = baroness.mountRideable(horse);
+            baroness.mountRideable(horse);
+        }
+        Assert.assertEquals("Wooooo!", actual);
     }
 
     @Test

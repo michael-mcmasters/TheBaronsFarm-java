@@ -14,12 +14,22 @@ public class Farmer extends Person implements Rider, Botanist {
         this.farm = farm;
     }
 
-    public void mountRideable(Rideable rideable) {
-        System.out.println("Wooooo!");
+    public String mountRideable(Rideable rideable) {
+        String sound = "";
+        if (rideable != null) {
+            sound += "Wooooo!";
+            System.out.println(sound);
+        }
+        return sound;
     }
 
-    public void dismountRideable(Rideable rideable) {
-        System.out.println("Aw :(");
+    public String dismountRideable(Rideable rideable) {
+        String sound = "";
+        if (rideable != null) {
+            sound += "Aw :(";
+            System.out.println(sound);
+        }
+        return sound;
     }
 
     public void plant(Crop crop, CropRow cropRow) {

@@ -6,11 +6,21 @@ import hbcu.stay.ready.baronsfarm.interfaces.Rider;
 
 public class Pilot extends Person implements Rider {
 
-    public void mountRideable(Rideable rideable) {
-
+    public String mountRideable(Rideable rideable) {
+        String sound = "";
+        if (rideable != null) {
+            sound += "Wooooo!";
+            System.out.println(sound);
+        }
+        return sound;
     }
 
-    public void dismountRideable(Rideable rideable) {
-
+    public String dismountRideable(Rideable rideable) {
+        String sound = "";
+        if (rideable != null) {
+            sound += "Aw :(";
+            System.out.println(sound);
+        }
+        return sound;
     }
 }
