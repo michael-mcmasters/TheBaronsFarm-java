@@ -68,7 +68,6 @@ public class Baron extends Farmer {
         return farmHouse;
     }
 
-    // ToDo: Make test.
     // Fertilize and harvest n amount of crops.
     // This is done so that in the Sunday test, when feeding crops to horses, they are already ready to yield an edible.
     private void fertilizeAndHarvestSomeCrops(int numToPrepare) {

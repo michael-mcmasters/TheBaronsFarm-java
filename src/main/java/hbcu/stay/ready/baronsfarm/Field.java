@@ -27,7 +27,6 @@ public class Field {
         return cropRows;
     }
 
-    // ToDo: Create test
     public List<Crop> getCropsInAllRows() {
         List<Crop> crops = new ArrayList<>();
         for (CropRow cropRow : cropRows) {

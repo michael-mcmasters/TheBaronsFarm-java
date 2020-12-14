@@ -22,7 +22,6 @@ public class Farm {
         this.farmHouse = new FarmHouse(new Farmer(this));
     }
 
-    // ToDo: create test for this constructor.
     public Farm(int numOfStables, int numOfChickenCoops, int numOfFields, FarmHouse farmHouse) {
         this.stableList = new ArrayList<>();
         this.chickenCoopList = new ArrayList<>();
@@ -82,7 +81,6 @@ public class Farm {
         return farmHouse;
     }
 
-    // ToDo: make test.
     public List<CropRow> getAllCropRows() {
         List<CropRow> cropRows = new ArrayList<>();
         for (Field field : fieldList) {
@@ -92,7 +90,6 @@ public class Farm {
         return cropRows;
     }
 
-    // ToDo: make test.
     public List<Horse> getAllHorses() {
         List<Horse> horses = new ArrayList<>();
         stableList.forEach(s -> horses.addAll(s.getHorseList()));
@@ -100,7 +97,6 @@ public class Farm {
     }
 
 
-    // ToDo: make test.
     // Gets every crop in every field and crop row. Returns every crop that yields an edible.
     public List<Edible> getEdibleOfType(EdibleType edibleType) {
         List<Crop> crops = getAllCrops();
@@ -146,7 +142,6 @@ public class Farm {
         return null;
     }
 
-    // ToDo: make test.
     public List<Crop> getAllCrops() {
         List<Crop> crops = new ArrayList<>();
         for (Field field : fieldList) {

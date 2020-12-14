@@ -26,7 +26,6 @@ public class FarmHouse {
         Collections.addAll(personList, persons);
     }
 
-    // ToDo: make test
     public void addVehicles(Vehicle... vehicles) {
         Collections.addAll(vehiclesList, vehicles);
     }
@@ -35,7 +34,6 @@ public class FarmHouse {
         return personList;
     }
 
-    // ToDo: make test
     public ArrayList<Vehicle> getVehicleList() {
         return vehiclesList;
     }
