@@ -44,4 +44,9 @@ public class Farmer extends Person implements Rider, Botanist {
     public void setFarm(Farm farm) {
         this.farm = farm;
     }
+
+    @Override
+    public String eat(Edible edible) {
+        return "The farmer eats the edible";
+    }
 }

@@ -29,7 +29,6 @@ public class FarmHouse {
     // ToDo: make test
     public void addVehicles(Vehicle... vehicles) {
         Collections.addAll(vehiclesList, vehicles);
-        System.out.println(vehiclesList.size());
     }
 
     public ArrayList<Person> getPersonList() {
