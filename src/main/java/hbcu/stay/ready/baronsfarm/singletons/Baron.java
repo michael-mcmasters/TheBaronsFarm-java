@@ -17,7 +17,7 @@ public class Baron extends Farmer {
         ArrayList<Stable> stables = getStables();
         ArrayList<ChickenCoop> chickenCoops = getChickenCoops();
         ArrayList<Field> fields = getField();
-        FarmHouse farmHouse = new FarmHouse(this);
+        FarmHouse farmHouse = getFarmHouse();
 
         Farm farm = new Farm(stables, chickenCoops, fields, farmHouse);
         super.setFarm(farm);

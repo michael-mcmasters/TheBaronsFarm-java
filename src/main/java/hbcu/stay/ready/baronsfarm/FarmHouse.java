@@ -18,6 +18,7 @@ public class FarmHouse {
 
     public FarmHouse(Person... persons) {
         this.personList = new ArrayList<>();
+        this.vehiclesList = new ArrayList<>();
         addPersons(persons);
     }
 
@@ -28,6 +29,7 @@ public class FarmHouse {
     // ToDo: make test
     public void addVehicles(Vehicle... vehicles) {
         Collections.addAll(vehiclesList, vehicles);
+        System.out.println(vehiclesList.size());
     }
 
     public ArrayList<Person> getPersonList() {
