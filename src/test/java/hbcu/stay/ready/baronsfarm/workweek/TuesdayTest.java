@@ -3,6 +3,7 @@ package hbcu.stay.ready.baronsfarm.workweek;
 import hbcu.stay.ready.baronsfarm.CropDuster;
 import hbcu.stay.ready.baronsfarm.EarCorn;
 import hbcu.stay.ready.baronsfarm.Horse;
+import hbcu.stay.ready.baronsfarm.Tractor;
 import hbcu.stay.ready.baronsfarm.enums.EdibleType;
 import hbcu.stay.ready.baronsfarm.interfaces.Crop;
 import hbcu.stay.ready.baronsfarm.interfaces.Edible;
@@ -14,7 +15,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class MondayTest {
+public class TuesdayTest {
 
     private final Baron baron = Baron.getInstance();
     private final Baroness baroness = Baroness.getInstance();
@@ -54,26 +55,25 @@ public class MondayTest {
     }
 
     @Test
-    public void fertilizeCropsWithCropDuster() {
-        // Fertilize
+    public void harvestCropsWithTractor() {
+        // Harvest
         List<Vehicle> vehicles = baron.getFarm().getFarmHouse().getVehicleList();
         for (Vehicle vehicle : vehicles) {
-            if (vehicle instanceof CropDuster) {
+            if (vehicle instanceof Tractor) {
                 baroness.mountRideable(vehicle);
-                ((CropDuster) vehicle).fly(baron.getFarm().getFields().get(0));
+                ((Tractor) vehicle).operate(baron.getFarm());
             }
         }
 
         // Verify
         List<Crop> crops = baron.getFarm().getAllCrops();
-        boolean allCropsAreFertilized = true;
+        boolean allCropsAreHarvested = true;
         for (Crop crop : crops) {
-            if (!crop.getHasBeenFertilized()) {
-                allCropsAreFertilized = false;
+            if (!crop.getHasBeenHarvested()) {
+                allCropsAreHarvested = false;
                 break;
             }
         }
-        Assert.assertTrue(allCropsAreFertilized);
+        Assert.assertTrue(allCropsAreHarvested);
     }
-
 }
