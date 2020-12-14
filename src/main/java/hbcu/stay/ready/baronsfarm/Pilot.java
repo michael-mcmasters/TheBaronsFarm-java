@@ -29,4 +29,9 @@ public class Pilot extends Person implements Rider {
     public String eat(Edible edible) {
         return "The pilot eats the edible";
     }
+
+    @Override
+    public String makeNoise() {
+        return "Vrooom, swiiish";
+    }
 }

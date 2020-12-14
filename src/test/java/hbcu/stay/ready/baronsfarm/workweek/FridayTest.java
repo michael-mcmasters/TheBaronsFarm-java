@@ -1,8 +1,11 @@
 package hbcu.stay.ready.baronsfarm.workweek;
 
-import hbcu.stay.ready.baronsfarm.*;
+import hbcu.stay.ready.baronsfarm.CropDuster;
+import hbcu.stay.ready.baronsfarm.EarCorn;
+import hbcu.stay.ready.baronsfarm.Horse;
 import hbcu.stay.ready.baronsfarm.enums.EdibleType;
 import hbcu.stay.ready.baronsfarm.interfaces.Edible;
+import hbcu.stay.ready.baronsfarm.interfaces.Vehicle;
 import hbcu.stay.ready.baronsfarm.singletons.Baron;
 import hbcu.stay.ready.baronsfarm.singletons.Baroness;
 import org.junit.Assert;
@@ -10,7 +13,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class ThursdayTest {
+public class FridayTest {
 
     private final Baron baron = Baron.getInstance();
     private final Baroness baroness = Baroness.getInstance();
@@ -50,13 +53,16 @@ public class ThursdayTest {
     }
 
     @Test
-    public void plantCornStalk() {
-        List<CropRow> cropRows = baron.getFarm().getAllCropRows();
-        int numOfCropsBefore = cropRows.get(0).getCrops().size();
-
-        cropRows.get(0).plantCrops(new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk(), new CornStalk());
-        int expected = numOfCropsBefore + 5;
-        int actual = cropRows.get(0).getCrops().size();
-        Assert.assertEquals(expected, actual);
+    public void flyAndMakeAirplaneSounds() {
+        List<Vehicle> vehicles = baron.getFarm().getFarmHouse().getVehicleList();
+        String actual = "";
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle instanceof CropDuster) {
+                baroness.mountRideable(vehicle);
+                actual = baroness.makeNoise();
+                break;
+            }
+        }
+        Assert.assertEquals("Vrooom, swiiish", actual);
     }
 }

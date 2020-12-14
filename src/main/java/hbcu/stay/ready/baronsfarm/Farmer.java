@@ -49,4 +49,9 @@ public class Farmer extends Person implements Rider, Botanist {
     public String eat(Edible edible) {
         return "The farmer eats the edible";
     }
+
+    @Override
+    public String makeNoise() {
+        return "We are farmers. Dun dun dun dun dun dun dun dun.";
+    }
 }
